@@ -1,31 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_fstrsub.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/24 22:12:36 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/04/06 13:12:38 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/04/06 13:16:05 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/04/06 13:20:58 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+char	*ft_fstrsub(const char *s, unsigned int start, size_t len)
 {
-	char *a;
+	char		*a;
+	const char	*c;
+	size_t		i;
 
-	if (!s)
-		return (NULL);
 	a = ft_strnew(len);
 	if (!a)
 		return (NULL);
-	a[len] = 0;
-	while (len)
+	i = 0;
+	c = (s + start);
+	while (i != len && *c)
 	{
-		len--;
-		a[len] = s[start + len];
+		a[i++] = *c;
+		c++;
 	}
 	return (a);
 }

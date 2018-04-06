@@ -6,7 +6,7 @@
 #    By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/20 11:09:03 by obamzuro          #+#    #+#              #
-#    Updated: 2018/04/06 13:03:24 by obamzuro         ###   ########.fr        #
+#    Updated: 2018/04/06 13:20:35 by obamzuro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,7 +76,8 @@ SRC = ft_memset.c				\
 	  ft_list_size.c			\
 	  ft_list_last.c			\
 	  ft_fstrjoin.c				\
-	  ft_fstrcpy.c
+	  ft_fstrcpy.c				\
+	  ft_fstrsub.c
 
 OBJECT = $(SRC:.c=.o)
 

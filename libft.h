@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/04/05 20:52:13 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/04/06 13:21:45 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,4 +88,5 @@ size_t			ft_list_size(t_list *begin_list);
 t_list			*ft_list_last(t_list *begin_list);
 char			*ft_fstrjoin(int s1l, const char *s1, int s2l, const char *s2);
 char			*ft_fstrcpy(char *dst, const char *src);
+char			*ft_fstrsub(const char *s, unsigned int start, size_t len);
 #endif
