@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/03/26 23:06:30 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/04/05 20:52:13 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,4 +86,6 @@ size_t			ft_wcount(const char *s, char c);
 int				ft_is_prime(int nb);
 size_t			ft_list_size(t_list *begin_list);
 t_list			*ft_list_last(t_list *begin_list);
+char			*ft_fstrjoin(int s1l, const char *s1, int s2l, const char *s2);
+char			*ft_fstrcpy(char *dst, const char *src);
 #endif

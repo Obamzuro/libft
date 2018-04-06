@@ -1,25 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_fstrcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/24 21:09:16 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/04/03 14:39:30 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/04/05 20:49:33 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/04/05 20:52:14 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strnew(size_t size)
+char	*ft_fstrcpy(char *dst, const char *src)
 {
-	char *a;
-
-	a = malloc(size + 1);
-	if (!a)
-		return (NULL);
-	while (size + 1)
-		a[size--] = 0;
-	return (a);
+	while (*src)
+		*dst++ = *src++;
+	*dst = *src;
+	return (dst);
 }

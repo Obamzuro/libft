@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 22:12:36 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/03/26 18:10:13 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/04/06 12:56:09 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 
 	if (!s)
 		return (NULL);
-	a = (char *)malloc(len + 1);
+	a = ft_strnew(len);
 	if (!a)
 		return (NULL);
 	a[len] = 0;
