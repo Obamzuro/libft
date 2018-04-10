@@ -6,15 +6,19 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/04/06 13:21:45 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/04/10 13:10:09 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
+# define BUFF_SIZE 100000000
+# define SMARTCHECK(x) if (!(x)) return (-1)
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
+# include <sys/types.h>
 
 typedef struct	s_list
 {
@@ -22,6 +26,14 @@ typedef struct	s_list
 	size_t			content_size;
 	struct s_list	*next;
 }				t_list;
+
+typedef struct	s_gnl_list
+{
+	char				buf[BUFF_SIZE + 1];
+	int					fd;
+	int					last;
+	struct s_gnl_list	*next;
+}				t_gnl_list;
 
 void			*ft_memset(void *a, int b, size_t c);
 void			ft_bzero(void *s, size_t n);
@@ -86,7 +98,6 @@ size_t			ft_wcount(const char *s, char c);
 int				ft_is_prime(int nb);
 size_t			ft_list_size(t_list *begin_list);
 t_list			*ft_list_last(t_list *begin_list);
-char			*ft_fstrjoin(int s1l, const char *s1, int s2l, const char *s2);
-char			*ft_fstrcpy(char *dst, const char *src);
-char			*ft_fstrsub(const char *s, unsigned int start, size_t len);
+char			*ft_strcpy_gnl(char *dst, const char *src);
+int				get_next_line(const int fd, char **line);
 #endif
