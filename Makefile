@@ -6,7 +6,7 @@
 #    By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/20 11:09:03 by obamzuro          #+#    #+#              #
-#    Updated: 2018/05/01 18:08:47 by obamzuro         ###   ########.fr        #
+#    Updated: 2018/05/01 18:09:43 by obamzuro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,7 @@ SRCNAME = 	ft_memset.c				\
 			get_next_line.c			\
 			ft_nbr_size.c				\
 
-SRC    = $(addprefix libft/, $(SRCNAME))
+SRC    = $(addprefix lib/, $(SRCNAME))
 OBJECT = $(SRC:.c=.o)
 
 HDIR   = include
