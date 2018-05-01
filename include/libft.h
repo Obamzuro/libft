@@ -6,13 +6,13 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/04/10 13:10:09 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/05/01 13:35:16 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-# define BUFF_SIZE 100000000
+# define BUFF_SIZE 1024
 # define SMARTCHECK(x) if (!(x)) return (-1)
 # include <string.h>
 # include <stdlib.h>
@@ -98,6 +98,11 @@ size_t			ft_wcount(const char *s, char c);
 int				ft_is_prime(int nb);
 size_t			ft_list_size(t_list *begin_list);
 t_list			*ft_list_last(t_list *begin_list);
+
 char			*ft_strcpy_gnl(char *dst, const char *src);
 int				get_next_line(const int fd, char **line);
+
+size_t			ft_nbr_size(intmax_t n);
+size_t			ft_nbr_basesize(intmax_t n, char base, char alternative);
+size_t			ft_unbr_basesize(uintmax_t n, char base, char alternative);
 #endif
