@@ -6,17 +6,17 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/09 16:36:46 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/05/09 16:38:55 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/05/09 17:08:13 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	swap_pointers(void *ptr1, void *ptr2)
+void	swap_pointers(void **ptr1, void **ptr2)
 {
-	void	*temp;
+	void	**temp;
 
-	temp = ptr2;
-	ptr2 = ptr1;
-	ptr1 = temp;
+	temp = *ptr2;
+	*ptr2 = *ptr1;
+	*ptr1 = *temp;
 }
