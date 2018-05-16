@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/02 14:48:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/04/16 02:16:09 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/05/16 13:26:48 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int			get_next_line(const int fd, char **line)
 	static t_gnl_list	*head;
 	t_gnl_list			*node;
 
+	head = 0;
 	if (fd < 0 || !line || BUFF_SIZE < 1)
 		return (-1);
 	*line = 0;
