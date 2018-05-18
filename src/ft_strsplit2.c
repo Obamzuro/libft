@@ -1,41 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_wcount.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/26 17:44:28 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/05/18 13:10:21 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/05/18 13:03:03 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/05/18 13:07:32 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_wcount(const char *s, char c)
+static char		**del_prev(char **a, size_t failed)
 {
 	size_t i;
 
-	i = 0;
-	while (1)
-	{
-		while (*s == c && *s)
-			s++;
-		if (!*s)
-			break ;
-		i++;
-		while (*s != c && *s)
-			s++;
-		if (!*s)
-			break ;
-	}
-	return (i);
+	i = -1;
+	while (++i < failed)
+		free(a[i]);
+	free(a);
+	return (NULL);
 }
 
-size_t	ft_wcount2(const char *s, const char *c)
+char			**ft_strsplit2(const char *s, const char *c)
 {
-	size_t i;
+	char	**a;
+	size_t	i;
 
+	if (!s)
+		return (NULL);
+	a = (char **)malloc((ft_wcount2(s, c) + 1) * sizeof(char *));
+	if (!a)
+		return (NULL);
 	i = 0;
 	while (1)
 	{
@@ -43,11 +40,12 @@ size_t	ft_wcount2(const char *s, const char *c)
 			s++;
 		if (!*s)
 			break ;
+		a[i] = ft_strsub(s, 0, ft_ccount(s, c));
+		if (!a[i])
+			return (del_prev(a, i));
 		i++;
-		while (!ft_strchr(c, *s) && *s)
-			s++;
-		if (!*s)
-			break ;
+		s += ft_ccount(s, c);
 	}
-	return (i);
+	a[i] = 0;
+	return (a);
 }
