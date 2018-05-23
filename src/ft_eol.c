@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/23 12:17:59 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/05/23 12:18:12 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/05/23 13:10:44 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ char		*ft_eol(char *str)
 	while (*ret)
 		++ret;
 	--ret;
-	return(ret);
+	return (ret);
 }
