@@ -6,7 +6,7 @@
 #    By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/20 11:09:03 by obamzuro          #+#    #+#              #
-#    Updated: 2018/05/23 12:18:50 by obamzuro         ###   ########.fr        #
+#    Updated: 2018/06/09 17:29:28 by obamzuro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -79,7 +79,8 @@ SRCNAME =   ft_memset.c				\
 			get_next_line.c			\
 			ft_nbr_size.c				\
 			ft_swap.c				\
-			ft_eol.c				
+			ft_eol.c				\
+			ft_vector.c
 
 SRC    = $(addprefix src/, $(SRCNAME))
 OBJECT = $(SRC:.c=.o)
