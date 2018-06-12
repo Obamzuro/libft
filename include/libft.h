@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/06/09 17:50:50 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/06/12 18:36:29 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,4 +126,8 @@ char			*ft_strjoin_path(const char *s1, const char *s2);
 void			init_ftvector(t_ftvector *vec);
 void			free_ftvector(t_ftvector *vec);
 void			push_ftvector(t_ftvector *vec, void *line);
+
+void			ft_strreverse(char *str, uint64_t strlen);
+
+void			print_memory(const void *addr, unsigned int size);
 #endif
