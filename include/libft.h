@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/06/12 18:36:29 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/08/06 14:48:51 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,6 +114,7 @@ size_t			ft_nbr_basesize(intmax_t n, char base, char alternative);
 size_t			ft_unbr_basesize(uintmax_t n, char base, char alternative);
 
 void			ft_swap_pointers(void **ptr1, void **ptr2);
+void			ft_iswap(int *ptr1, int *ptr2);
 
 char			**ft_strsplit2(const char *s, const char *c);
 size_t			ft_ccount2(const char *s, const char *c);
