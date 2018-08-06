@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 22:22:33 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/05/23 16:18:02 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/07/05 15:01:15 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,19 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	if (s2)
 		ft_strcpy(a + s1l, s2);
 	return (a);
+}
+
+char	*ft_chrjoin(const char *s1, char c)
+{
+	size_t	size;
+	char	*ret;
+
+	size = ft_strlen(s1);
+	ret = (char *)malloc(size + 2);
+	ft_memcpy(ret, s1, size);
+	ret[size] = c;
+	ret[size + 1] = 0;
+	return (ret);
 }
 
 char	*ft_strjoin_char(const char *s1, const char *s2, char c)

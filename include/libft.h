@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/08/06 14:48:51 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/08/06 21:40:38 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,6 +123,7 @@ size_t			ft_wcount2(const char *s, const char *c);
 char			*ft_eol(char *str);
 char			*ft_strjoin_char(const char *s1, const char *s2, char c);
 char			*ft_strjoin_path(const char *s1, const char *s2);
+char			*ft_chrjoin(const char *s1, char c);
 
 void			init_ftvector(t_ftvector *vec);
 void			free_ftvector(t_ftvector *vec);
