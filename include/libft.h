@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/08/06 21:40:38 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/08/12 11:52:04 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,4 +132,6 @@ void			push_ftvector(t_ftvector *vec, void *line);
 void			ft_strreverse(char *str, uint64_t strlen);
 
 void			print_memory(const void *addr, unsigned int size);
+
+int				ft_isnumber(const char *str);
 #endif
