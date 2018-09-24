@@ -1,29 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 20:25:54 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/09/21 22:17:47 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/03/21 20:24:09 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/06/14 15:28:54 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-char	*ft_strchr(const char *s, int c)
+char	*ft_strcpy(char *dst, const char *src)
 {
-	while (*s != (char)c)
-		if (!*s++)
-			return (NULL);
-	return (char *)(s);
-}
+	char *dstc;
 
-char	*ft_strchr_str(const char *s, const char *s2)
-{
-	while (!ft_is_char_in_str(*s, s2))
-		if (!*s++)
-			return (NULL);
-	return (char *)(s);
+	if (!dst || !src)
+		return (0);
+	dstc = dst;
+	while (*src)
+		*dstc++ = *src++;
+	*dstc = *src;
+	return (dst);
 }

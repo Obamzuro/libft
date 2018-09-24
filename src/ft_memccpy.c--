@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 20:25:54 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/09/21 22:17:47 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/03/21 13:08:26 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/03/26 23:04:57 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	while (*s != (char)c)
-		if (!*s++)
-			return (NULL);
-	return (char *)(s);
-}
+	size_t		i;
+	char		*cdst;
+	const char	*csrc;
 
-char	*ft_strchr_str(const char *s, const char *s2)
-{
-	while (!ft_is_char_in_str(*s, s2))
-		if (!*s++)
-			return (NULL);
-	return (char *)(s);
+	cdst = (char *)dst;
+	csrc = (const char *)src;
+	i = 0;
+	while (i < n)
+	{
+		cdst[i] = csrc[i];
+		if (csrc[i] == (char)c)
+			return (cdst + i + 1);
+		i++;
+	}
+	return (NULL);
 }

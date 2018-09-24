@@ -1,53 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_ccount.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/21 19:45:39 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/09/17 11:08:07 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/03/26 17:41:34 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/09/17 11:07:06 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_ccount(const char *s, char c)
 {
-	int i;
+	size_t i;
 
-	if (!s)
-		return (0);
-	i = -1;
-	while (s[++i])
-		;
+	i = 0;
+	while (*s && *s++ != c)
+		i++;
 	return (i);
 }
 
-size_t	ft_ustrlen(const char *p)
+size_t	ft_uccount(const char *p, char c)
 {
-	size_t			i;
-	size_t			ret;
-	unsigned char	*s;
+	size_t i;
+	unsigned char *s;
 
 	s = (unsigned char *)p;
-	if (!s)
-		return (0);
 	i = 0;
-	ret = 0;
-	while (s[i])
+	while (*s && *s != c)
 	{
-		if (s[i] >> 5 == 0b110 ||
-			s[i] >> 4 == 0b1110 ||
-			s[i] >> 3 == 0b11110)
+		if (*s >> 5 == 0b110 ||
+			*s >> 4 == 0b1110 ||
+			*s >> 3 == 0b11110)
 		{
-			++i;
-			while (s[i] && s[i] >> 6 == 0b10)
-				++i;
+			++s;
+			while (*s && *s >> 6 == 0b10)
+				++s;
 		}
 		else
-			++i;
-		++ret;
+			++s;
+		++i;
 	}
-	return (ret);
+	return (i);
+}
+
+size_t	ft_ccount2(const char *s, const char *c)
+{
+	size_t i;
+
+	i = 0;
+	while (*s && !ft_strchr(c, *s++))
+		i++;
+	return (i);
 }

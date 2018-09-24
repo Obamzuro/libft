@@ -6,7 +6,7 @@
 #    By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/20 11:09:03 by obamzuro          #+#    #+#              #
-#    Updated: 2018/08/12 11:55:24 by obamzuro         ###   ########.fr        #
+#    Updated: 2018/09/24 14:35:10 by obamzuro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,8 @@ SRCNAME =   ft_memset.c				\
 			ft_vector.c				\
 			ft_strreverse.c			\
 			print_memory.c			\
-			ft_is.c
+			ft_is.c					\
+			ft_strfind.c
 
 SRC    = $(addprefix src/, $(SRCNAME))
 OBJECT = $(SRC:.c=.o)
@@ -97,7 +98,7 @@ $(NAME): $(OBJECT)
 	ranlib $(NAME)
 
 %.o: %.c
-	gcc -g -Wall -Wextra -Wall -o $@ -c $< -I $(HDIR)
+	gcc -Wall -Wextra -Wall -o $@ -c $< -I $(HDIR)
 
 clean:
 	rm -f $(OBJECT)
