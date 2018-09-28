@@ -6,7 +6,7 @@
 #    By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/03/20 11:09:03 by obamzuro          #+#    #+#              #
-#    Updated: 2018/09/24 14:35:10 by obamzuro         ###   ########.fr        #
+#    Updated: 2018/09/28 11:46:50 by obamzuro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -98,7 +98,7 @@ $(NAME): $(OBJECT)
 	ranlib $(NAME)
 
 %.o: %.c
-	gcc -Wall -Wextra -Wall -o $@ -c $< -I $(HDIR)
+	gcc -g -Wall -Wextra -Wall -o $@ -c $< -I $(HDIR)
 
 clean:
 	rm -f $(OBJECT)
