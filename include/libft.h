@@ -6,7 +6,11 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/20 11:38:42 by obamzuro          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2018/09/27 17:02:43 by obamzuro         ###   ########.fr       */
+=======
+/*   Updated: 2018/09/18 17:09:32 by obamzuro         ###   ########.fr       */
+>>>>>>> d768ecb37af9914cab8881a67e02d2db4997fc4c
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +23,7 @@
 # include <unistd.h>
 # include <fcntl.h>
 # include <sys/types.h>
+# include <stdarg.h>
 
 typedef struct	s_list
 {
@@ -50,6 +55,7 @@ void			*ft_memmove(void *dst, const void *src, size_t len);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 size_t			ft_strlen(const char *s);
+size_t			ft_ustrlen(const char *s);
 char			*ft_strdup(const char *s);
 char			*ft_strcpy(char *dst, const char *src);
 char			*ft_strncpy(char *dst, const char *src, size_t len);
@@ -57,6 +63,7 @@ char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 char			*ft_strchr(const char *s, int c);
+char			*ft_strchr_str(const char *s, const char *s2);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *big, const char *little);
 char			*ft_strnstr(const char *big, const char *little, size_t len);
@@ -101,6 +108,7 @@ void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 size_t			ft_ccount(const char *s, char c);
+size_t			ft_uccount(const char *s, char c);
 size_t			ft_wcount(const char *s, char c);
 int				ft_is_prime(int nb);
 size_t			ft_list_size(t_list *begin_list);
@@ -125,6 +133,7 @@ char			*ft_eol(char *str);
 char			*ft_strjoin_char(const char *s1, const char *s2, char c);
 char			*ft_strjoin_path(const char *s1, const char *s2);
 char			*ft_chrjoin(const char *s1, char c);
+char			*ft_strjoin_inner(const char *s1, const char *s2, int pos);
 
 void			init_ftvector(t_ftvector *vec);
 void			free_ftvector(t_ftvector *vec);
@@ -133,4 +142,10 @@ void			push_ftvector(t_ftvector *vec, void *line);
 void			ft_strreverse(char *str, uint64_t strlen);
 
 void			print_memory(const void *addr, unsigned int size);
+
+int				ft_isnumber(const char *str);
+
+int				ft_is_str_in_args(const char *str, int amount_args,
+		...);
+int				ft_is_char_in_str(const char a, const char *str);
 #endif

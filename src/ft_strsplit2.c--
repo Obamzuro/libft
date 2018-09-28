@@ -1,31 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_strsplit2.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/24 22:12:36 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/09/21 20:45:34 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/05/18 13:03:03 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/05/18 13:07:32 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strsub(const char *s, unsigned int start, size_t len)
+static char		**del_prev(char **a, size_t failed)
 {
-	char *a;
+	size_t i;
 
-	if (!s || !len)
+	i = -1;
+	while (++i < failed)
+		free(a[i]);
+	free(a);
+	return (NULL);
+}
+
+char			**ft_strsplit2(const char *s, const char *c)
+{
+	char	**a;
+	size_t	i;
+
+	if (!s)
 		return (NULL);
-	a = ft_strnew(len);
+	a = (char **)malloc((ft_wcount2(s, c) + 1) * sizeof(char *));
 	if (!a)
 		return (NULL);
-	a[len] = 0;
-	while (len)
+	i = 0;
+	while (1)
 	{
-		len--;
-		a[len] = s[start + len];
+		while (ft_strchr(c, *s) && *s)
+			s++;
+		if (!*s)
+			break ;
+		a[i] = ft_strsub(s, 0, ft_ccount(s, c));
+		if (!a[i])
+			return (del_prev(a, i));
+		i++;
+		s += ft_ccount(s, c);
 	}
+	a[i] = 0;
 	return (a);
 }

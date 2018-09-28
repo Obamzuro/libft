@@ -1,53 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strfind.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/21 19:45:39 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/09/17 11:08:07 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/08/28 20:49:04 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/09/18 17:08:40 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+int		ft_is_str_in_args(const char *str, int amount_args, ...)
 {
-	int i;
+	va_list		ap;
+	int			i;
 
-	if (!s)
+	if (amount_args < 0)
 		return (0);
+	va_start(ap, amount_args);
 	i = -1;
-	while (s[++i])
-		;
-	return (i);
+	while (++i != amount_args)
+		if (ft_strequ(str, va_arg(ap, char *)))
+			break ;
+	va_end(ap);
+	if (i == amount_args)
+		return (0);
+	return (1);
 }
 
-size_t	ft_ustrlen(const char *p)
+int		ft_is_char_in_str(const char a, const char *str)
 {
-	size_t			i;
-	size_t			ret;
-	unsigned char	*s;
-
-	s = (unsigned char *)p;
-	if (!s)
+	if (!str)
 		return (0);
-	i = 0;
-	ret = 0;
-	while (s[i])
-	{
-		if (s[i] >> 5 == 0b110 ||
-			s[i] >> 4 == 0b1110 ||
-			s[i] >> 3 == 0b11110)
-		{
-			++i;
-			while (s[i] && s[i] >> 6 == 0b10)
-				++i;
-		}
-		else
-			++i;
-		++ret;
-	}
-	return (ret);
+	while (*str)
+		if (a == *str++)
+			return (1);
+	return (0);
 }

@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/03/22 20:25:54 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/09/21 22:17:47 by obamzuro         ###   ########.fr       */
+/*   Created: 2018/05/09 16:36:46 by obamzuro          #+#    #+#             */
+/*   Updated: 2018/08/06 14:48:51 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_swap_pointers(void **ptr1, void **ptr2)
 {
-	while (*s != (char)c)
-		if (!*s++)
-			return (NULL);
-	return (char *)(s);
+	void	*temp;
+
+	temp = *ptr2;
+	*ptr2 = *ptr1;
+	*ptr1 = temp;
 }
 
-char	*ft_strchr_str(const char *s, const char *s2)
+void	ft_iswap(int *a, int *b)
 {
-	while (!ft_is_char_in_str(*s, s2))
-		if (!*s++)
-			return (NULL);
-	return (char *)(s);
+	int	temp;
+	temp = *a;
+	*a = *b;
+	*b = temp;
 }
