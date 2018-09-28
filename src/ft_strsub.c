@@ -6,17 +6,21 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/03/24 22:12:36 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/09/21 20:45:34 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/09/28 12:36:08 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+/*
+** !len condition in 21sh added but fdf missed
+*/
+
 char	*ft_strsub(const char *s, unsigned int start, size_t len)
 {
 	char *a;
 
-	if (!s || !len)
+	if (!s)
 		return (NULL);
 	a = ft_strnew(len);
 	if (!a)
