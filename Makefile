@@ -98,7 +98,7 @@ $(NAME): $(OBJECT)
 	ranlib $(NAME)
 
 %.o: %.c
-	gcc -g -Wall -Wextra -Wall -o $@ -c $< -I $(HDIR)
+	gcc -Wall -Wextra -Wall -o $@ -c $< -I $(HDIR)
 
 clean:
 	rm -f $(OBJECT)
