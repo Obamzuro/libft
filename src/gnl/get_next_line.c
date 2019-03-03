@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/04/02 14:48:42 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/08/30 18:34:15 by obamzuro         ###   ########.fr       */
+/*   Updated: 2018/05/23 12:16:42 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,13 +99,16 @@ int			get_next_line(const int fd, char **line)
 		return (handle_not_fd(fd, head, line));
 	}
 	node = head;
-	while (node->next)
+	while (1)
 	{
 		if (node->fd == fd)
 			return (handle_fd_exist(fd, node, line));
+		if (!(node->next))
+		{
+			SMARTCHECK(node->next = (t_gnl_list *)malloc(sizeof(t_gnl_list)));
+			node = node->next;
+			return (handle_not_fd(fd, node, line));
+		}
 		node = node->next;
 	}
-	SMARTCHECK(node->next = (t_gnl_list *)malloc(sizeof(t_gnl_list)));
-	node = node->next;
-	return (handle_not_fd(fd, node, line));
 }

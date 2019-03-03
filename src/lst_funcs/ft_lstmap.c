@@ -14,7 +14,7 @@
 
 static void		dellstcontent(void *a, size_t b)
 {
-	b = 0;
+	b = b + 1;
 	free(a);
 }
 
