@@ -6,7 +6,7 @@
 /*   By: obamzuro <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/05/18 13:03:03 by obamzuro          #+#    #+#             */
-/*   Updated: 2018/05/18 13:07:32 by obamzuro         ###   ########.fr       */
+/*   Updated: 2019/05/03 13:03:03 by obamzuro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,11 +40,11 @@ char			**ft_strsplit2(const char *s, const char *c)
 			s++;
 		if (!*s)
 			break ;
-		a[i] = ft_strsub(s, 0, ft_ccount(s, c));
+		a[i] = ft_strsub(s, 0, ft_ccount2(s, c));
 		if (!a[i])
 			return (del_prev(a, i));
 		i++;
-		s += ft_ccount(s, c);
+		s += ft_ccount2(s, c);
 	}
 	a[i] = 0;
 	return (a);
