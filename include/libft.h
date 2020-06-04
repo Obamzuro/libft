@@ -14,6 +14,7 @@
 # define LIBFT_H
 # define BUFF_SIZE 1024
 # define SMARTCHECK(x) if (!(x)) return (-1)
+# include <stdio.h>
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
@@ -21,6 +22,7 @@
 # include <sys/types.h>
 # include <stdarg.h>
 # include <inttypes.h>
+# include <sys/stat.h>
 
 typedef struct	s_list
 {
@@ -145,4 +147,6 @@ int				ft_isnumber(const char *str);
 int				ft_is_str_in_args(const char *str, int amount_args,
 		...);
 int				ft_is_char_in_str(const char a, const char *str);
+char			*ft_get_file(const char *file);
+char			*ft_run_command(const char *command);
 #endif
