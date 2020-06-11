@@ -1,6 +1,6 @@
 #include "libft.h"
 
-static ssize_t ft_get_file_content(int fd, char **ret)
+ssize_t ft_get_file_content(int fd, char **ret)
 {
 	char		*temp;
 	char		*buf;

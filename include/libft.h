@@ -149,4 +149,5 @@ int				ft_is_str_in_args(const char *str, int amount_args,
 int				ft_is_char_in_str(const char a, const char *str);
 char			*ft_get_file(const char *file);
 char			*ft_run_command(const char *command);
+ssize_t ft_get_file_content(int fd, char **ret);
 #endif
