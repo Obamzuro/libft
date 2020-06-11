@@ -12,19 +12,17 @@ static ssize_t ft_get_file_content(int fd, char **ret)
 	sum_line_size = 0;
 	*ret = (char *)ft_memalloc(size);
 	buf = (char *)ft_memalloc(size);
-	while ((was_read = read(fd, buf, 1024)) >= 0)
+	while ((was_read = read(fd, buf, 1023)) >= 0)
 	{
 		sum_line_size += was_read;
 		if (!was_read)
 			break ;
 		temp = *ret;
-		*ret = (char *)malloc(size);
-		ft_bzero(*ret, size);
-		ft_memcpy(*ret, temp, size - 1024);
-		ft_memcpy(*ret + size - 1024, buf, was_read);
+		*ret = (char *)ft_memalloc(sum_line_size + 1);
+		ft_memcpy(*ret, temp, sum_line_size - was_read);
+		ft_memcpy(*ret + sum_line_size - was_read, buf, was_read);
 		ft_bzero(buf, 1024);
 		free(temp);
-		sum_line_size += 1024;
 	}
 	free(buf);
 	if (was_read == -1)
